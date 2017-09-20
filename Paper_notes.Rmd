@@ -1,0 +1,18 @@
+---
+title: "Paper_notes"
+author: "Viviana Alejandra Rodriguez Romero"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### Watson & Crick, 1953
+
+- Watson, J. D., and F. H. Crick. “Molecular Structure of Nucleic Acids;
+a Structure for Deoxyribose Nucleic Acid.” Nature 171, no. 4356 (April 25,
+1953): 737–38
+
+A new structure of the deoxyribose nucleic acid (D.N.A.). Structures proposed previously are not satisfactory. The new structure has two helical chains rotating about the same axis but in opposite directions. The chains are hydrogen bonded by pairs of single bases from each chain. Also, the pairs should be adenine with thymine, and guanine with cytosine, but it is necessary more experiments to prove this fact.     
+
+###      
