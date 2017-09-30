@@ -9,10 +9,25 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ### Watson & Crick, 1953
 
-- Watson, J. D., and F. H. Crick. “Molecular Structure of Nucleic Acids;
-a Structure for Deoxyribose Nucleic Acid.” Nature 171, no. 4356 (April 25,
-1953): 737–38
+- Watson, J. D., and F. H. Crick. "Molecular Structure of Nucleic Acids;
+a Structure for Deoxyribose Nucleic Acid." Nature 171, no. 4356 (April 25,
+1953): 737-38
 
 A new structure of the deoxyribose nucleic acid (D.N.A.). Structures proposed previously are not satisfactory. The new structure has two helical chains rotating about the same axis but in opposite directions. The chains are hydrogen bonded by pairs of single bases from each chain. Also, the pairs should be adenine with thymine, and guanine with cytosine, but it is necessary more experiments to prove this fact.     
 
-###      
+### Tumor Analysis Best Practices Working Group, 2004
+
+- Tumor Analysis Best Practices Working Group. "Expression Profiling-Best Practices for Data Generation and Interpretation in Clinical Trials." Nature Reviews. Genetics 5, no. 3 (March 2004): 229-37. doi:10.1038/nrg1297. https://www.ncbi.nlm.nih.gov/pubmed/14970825
+
+Spotted cDNAs, spotted oligonucleotides and Affymetrix arrays are the most used types of microarray platforms. However, the manufacture of them varies from place to place, which decreases the comparability between results from different studies.  Then, standardization processes are required in all points of the microarray analysis for using and interpreting microarray data. Standardization ideas go from laboratory process, using the same control RNA solution, to reporting results, as the MIAME (Minimum Information About A  Microarray  Experiment) proposes.
+Experimental design is the first place where the standardization is required. Here is important to consider the number of replications, tissue/cell heterogeneity, and procedural variation. Technical variability, as the quantity and quality of the RNA isolated, as the microarray controls have standardized rules.  Another step that requires standard procedures in the signal generation (normalization). Finally, robust statistical analysis that can handle multicollinearity in small samples to make good predictions are needed.
+
+### Lipshutz  et.al., 1999
+
+Lipshutz, R. J., Fodor, S. P., Gingeras T. R., and Lockhart D. J.. "High Density Synthetic Oligonucleotide Arrays." Nature Genetics 21, no. 1 Suppl (January 1999): 20-24. doi:10.1038/4447. https://www.ncbi.nlm.nih.gov/pubmed/9915496 
+
+The GeneChip probe array is a new method to design high-density, two-dimensional arrays of synthetic oligonucleotides. This array can monitor the expression levels of several genes, since oligonucleotide probes use the same method regardless of the organism under study, with good discrimination between signal and noise.
+
+###   
+
+
