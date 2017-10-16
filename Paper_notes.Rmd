@@ -28,6 +28,15 @@ Lipshutz, R. J., Fodor, S. P., Gingeras T. R., and Lockhart D. J.. "High Density
 
 The GeneChip probe array is a new method to design high-density, two-dimensional arrays of synthetic oligonucleotides. This array can monitor the expression levels of several genes, since oligonucleotide probes use the same method regardless of the organism under study, with good discrimination between signal and noise.
 
+### Altman & Krzywinski, 2014 
+
+Altman, N., Krzywinski M. “Points of Significance: Sources of Variation.” Nature Methods 12, no. 1 (December 30, 2014): 5–6. doi:10.1038/nmeth.3224
+
+All experiments are exposed to different sources of variability. While some sources affect the internal validity of the experiment, others affect external validity. It is essential to identify the sources of variability, to control or measure them, to have more precise and unbiased estimates. 
+Biological variability, for example, phenotype and genotype data, can be controlled by fixing the levels of these variables and randomizing to treatments. 
+On another hand, replication increases the precision of the estimates and allows to measure the variability from different sources. Additionally, replications in top layers have more impact on the precision than in later layers. 
+Finally, blocking can control both internal and external variability, for example using siblings controls external variability and blocking by a technician controls internal variability. With this reduction in variability, blocking increases power in tests for comparisons between treatments.
+
 ###   
 
 
