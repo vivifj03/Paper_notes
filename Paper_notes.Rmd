@@ -37,6 +37,19 @@ Biological variability, for example, phenotype and genotype data, can be control
 On another hand, replication increases the precision of the estimates and allows to measure the variability from different sources. Additionally, replications in top layers have more impact on the precision than in later layers. 
 Finally, blocking can control both internal and external variability, for example using siblings controls external variability and blocking by a technician controls internal variability. With this reduction in variability, blocking increases power in tests for comparisons between treatments.
 
-###   
+### Bolstad et.al., 2003
+
+Bolstad BM, Irizarry RA, Astrand M, Speed TP. “A Comparison of Normalization Methods for High Density Oligonucleotide Array Data Based on Variance and Bias.” Bioinformatics (Oxford, England) 19, no. 2 (January 22, 2003): 185–93.
+
+Normalization aims to remove non-biological variation between arrays. Three different complete-data normalization methods are proposed, all independent of the baseline array and carried at probe level. Cyclic loess uses an MA plot applied to probe intensities of two different arrays ($x_{ki}$ and $x_{kj}$), then a loess regression adjusts the probe intensities. This method can be time-consuming since, under multiple arrays, all the pairwise combinations between probes from different arrays should be done multiple times until no more normalization is required. The contrast-based method uses log-scale transformation to build the MA plots, subsequently, the intensities are adjusted using $n-1$ normalizing curves and finally, data is transformed back using exponentiation. This method is also time-consuming. Quantile normalization aims to make the intensities distributions of many arrays the same by using the mean quantile as the value of the original data.
+
+As a comparison of performance, two baseline array methods are used, scaling and non-linear approaches. Complete-data methods showed more variance reduction as compared with baseline array methods, particularly the quantile method. Also, quantile method showed to be the best method minimizing the differences in pairwise comparisons between arrays, and less bias among the other complete-data methods. 
 
 
+### Cleveland & William &  Devlin, 1988
+
+Cleveland, William S, Devlin S. “Locally Weighted Regression: An Approach to Regression Analysis by Local Fitting.” Journal of the American Statistical Association 83, no. 403 (1988): 596–610.
+
+Loess stands by locally weighted regression. This is a recurrent process in which a weighted least squares estimation is used at each point using only the q nearest-neighbors. The nearest-neighbors are defined using a distance function, usually the Euclidian distance. Loess also requires a weight function which is the tricube function. The tricube function gives more weight to nearby neighbors, and the weights go down as the distance of the point of interest increases. The loess estimate is a linear combination of the observed values for the dependent variable, and it is an unbiased estimator. However, assumptions of independence, normality and constant variance of the errors should be assesed. 
+
+Loess is more useful than regression when the relationship between independent and dependent variables is not linear. However, loess uses all the dependent variables without allowing a variable selection at the same time than building the model. Also, under a high number of independent variables, smoothing is not recommendable.
