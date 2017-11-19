@@ -24,13 +24,13 @@ Experimental design is the first place where the standardization is required. He
 
 ### Lipshutz  et.al., 1999
 
-Lipshutz, R. J., Fodor, S. P., Gingeras T. R., and Lockhart D. J.. "High Density Synthetic Oligonucleotide Arrays." Nature Genetics 21, no. 1 Suppl (January 1999): 20-24. doi:10.1038/4447. https://www.ncbi.nlm.nih.gov/pubmed/9915496 
+- Lipshutz, R. J., Fodor, S. P., Gingeras T. R., and Lockhart D. J.. "High Density Synthetic Oligonucleotide Arrays." Nature Genetics 21, no. 1 Suppl (January 1999): 20-24. doi:10.1038/4447. https://www.ncbi.nlm.nih.gov/pubmed/9915496 
 
 The GeneChip probe array is a new method to design high-density, two-dimensional arrays of synthetic oligonucleotides. This array can monitor the expression levels of several genes, since oligonucleotide probes use the same method regardless of the organism under study, with good discrimination between signal and noise.
 
 ### Altman & Krzywinski, 2014 
 
-Altman, N., Krzywinski M. “Points of Significance: Sources of Variation.” Nature Methods 12, no. 1 (December 30, 2014): 5–6. doi:10.1038/nmeth.3224
+- Altman, N., Krzywinski M. “Points of Significance: Sources of Variation.” Nature Methods 12, no. 1 (December 30, 2014): 5–6. doi:10.1038/nmeth.3224
 
 All experiments are exposed to different sources of variability. While some sources affect the internal validity of the experiment, others affect external validity. It is essential to identify the sources of variability, to control or measure them, to have more precise and unbiased estimates. 
 Biological variability, for example, phenotype and genotype data, can be controlled by fixing the levels of these variables and randomizing to treatments. 
@@ -39,7 +39,7 @@ Finally, blocking can control both internal and external variability, for exampl
 
 ### Bolstad et.al., 2003
 
-Bolstad BM, Irizarry RA, Astrand M, Speed TP. “A Comparison of Normalization Methods for High Density Oligonucleotide Array Data Based on Variance and Bias.” Bioinformatics (Oxford, England) 19, no. 2 (January 22, 2003): 185–93.
+- Bolstad BM, Irizarry RA, Astrand M, Speed TP. “A Comparison of Normalization Methods for High Density Oligonucleotide Array Data Based on Variance and Bias.” Bioinformatics (Oxford, England) 19, no. 2 (January 22, 2003): 185–93.
 
 Normalization aims to remove non-biological variation between arrays. Three different complete-data normalization methods are proposed, all independent of the baseline array and carried at probe level. Cyclic loess uses an MA plot applied to probe intensities of two different arrays ($x_{ki}$ and $x_{kj}$), then a loess regression adjusts the probe intensities. This method can be time-consuming since, under multiple arrays, all the pairwise combinations between probes from different arrays should be done multiple times until no more normalization is required. The contrast-based method uses log-scale transformation to build the MA plots, subsequently, the intensities are adjusted using $n-1$ normalizing curves and finally, data is transformed back using exponentiation. This method is also time-consuming. Quantile normalization aims to make the intensities distributions of many arrays the same by using the mean quantile as the value of the original data.
 
@@ -48,8 +48,60 @@ As a comparison of performance, two baseline array methods are used, scaling and
 
 ### Cleveland & William &  Devlin, 1988
 
-Cleveland, William S, Devlin S. “Locally Weighted Regression: An Approach to Regression Analysis by Local Fitting.” Journal of the American Statistical Association 83, no. 403 (1988): 596–610.
+- Cleveland, William S, Devlin S. “Locally Weighted Regression: An Approach to Regression Analysis by Local Fitting.” Journal of the American Statistical Association 83, no. 403 (1988): 596–610.
 
 Loess stands by locally weighted regression. This is a recurrent process in which a weighted least squares estimation is used at each point using only the q nearest-neighbors. The nearest-neighbors are defined using a distance function, usually the Euclidian distance. Loess also requires a weight function which is the tricube function. The tricube function gives more weight to nearby neighbors, and the weights go down as the distance of the point of interest increases. The loess estimate is a linear combination of the observed values for the dependent variable, and it is an unbiased estimator. However, assumptions of independence, normality and constant variance of the errors should be assesed. 
 
 Loess is more useful than regression when the relationship between independent and dependent variables is not linear. However, loess uses all the dependent variables without allowing a variable selection at the same time than building the model. Also, under a high number of independent variables, smoothing is not recommendable.
+
+
+### Smyth (2004) 
+
+- Smyth GK. "Linear Models and Empirical Bayes Methods for Assessing Differential Expression in Microarray Experiments". Statistical Applications in Genetics and Molecular Biology 3 (2004).
+
+Lonnstedt's method to detect differential expression using a B-statistic (2002) is extended to analyze general microarray experiments. The process builds linear models for the experiment where the dependent variable is the gene expression, for example, log2(R)-log2(G); and the idea is to estimate the model coefficient that distinguishes between groups. The hierarchical model assumes a prior distribution for the coefficients and the variances for each gene. A moderated t-statistic is defined as the classic t-statistic but using the posterior variance instead of the sample variance. Under the null hypothesis, the coefficient is zero, and the moderated t-statistic follows a t-distribution where the degrees of freedom are calculated using the data. The paper also proposes the calculation of the posterior odds to measure the evidence for differential expression (B). The authors show the methodology for the estimation of the hyperparameters. Even when the gene identification using the moderate t-statistic or using B would lead similar results, B requires knowledge of more parameters as compared with moderated t. A simulation study shows that the moderated t has lower false discovery rate as compared with other methods under different scenarios.
+
+
+### Tusher & Tibshirani & Chu (2001)
+
+- Tusher VG., Tibshirani R., and Chu G. "Significance Analysis of Microarrays Applied to the Ionizing Radiation Response"." Proceedings of the National Academy of Sciences of the United States of America 98, no. 9 (April 24, 2001)
+
+Microarrays allow the measurement of thousands of genes in only one experiment but conventional statistical methods to assess differential expression present high false discovery rate (FDR).  Significance Analysis of Microarrays (SAM) is a proposed approach to identify significant changes in gene expression while accounting for multiple comparisons. First, the proposed statistic, d(i), is a relative difference in the expresión divided by the standard desviación of the repeated measures, adding a positive constant in the denominator to adjust for small variability in gene expression. This statistic is calculated for each gene.
+
+Then, permutations are performed, and the statistic is calculated for each permutation getting the distribution of the statistic and the expected relative difference [de(i)].  The d(i) and de(i) are compared, usually plotted together, and thresholds are specified to identify induced or repressed genes. One important thing about this approach is that the thresholds allow an asymmetric identification.  This approach has shown lower FDR as compared with fold change identification methods. 
+
+### Goeman & Solari (2014)
+
+- Goeman JJ, Solari A. "Multiple Hypothesis Testing in Genomics". Statistics in Medicine 33, no. 11 (May 20, 2014).
+
+Multiple testing and correction for it are discussed. Three different perspectives for error control are described. Familywise error (FWER) that controls the probability of having at least one error in a set; the false discovery rate (FDR) that controls the expected proportion of errors among the rejections; and the false discovery proportion (FDP) that estimates the proportion of false rejections among the rejections. 
+
+The FWER methods: 
+
+- Bonferroni which is simple but conservative especially in cases such as in gene expression where the p-values are correlated. 
+
+- Holm that is less conservative than Bonferroni by allowing an increasing alpha as less hypothesis remains to be tested. 
+
+- Hochberg and Hommel assume positive dependence through stochastic ordering (PDS), which makes them less conservative as compared with Holm. 
+
+- Westfall & Young is a sequential permutation method that rejects according to the quartiles and then recalculated the distribution until no more hypothesis are rejected. 
+
+The FDR methods: 
+
+- Benjamini & Hochberg
+
+- False discovery rate control under general dependence
+
+- False discovery rate control by resampling
+
+- Use of false discovery rate control
+
+The FDP methods:
+
+- Storey’s approach and significance analysis of microarrays
+
+- Efron’s approach
+
+- False discovery proportion confidence
+
+- Meinshausen’s permutation method
