@@ -105,3 +105,29 @@ The FDP methods:
 - False discovery proportion confidence
 
 - Meinshausen’s permutation method
+
+
+### Yoav & Hochberg (1995)
+
+- Benjamini Y., and Hochberg Y. "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing." Journal of the Royal Statistical Society. Series B (Methodological), 1995, 289–300. 
+
+False Discovery Rate (FDR) is the expected proportion of erroneously rejected hypothesis among the rejected ones. Benjamini and Hochberg (1995) proposed an approach to multiple testing that controls the FDR. Let us assume we have $H_1, H_2, ... H_m$ hypothesis and $P_1, P_2, ..., P_m$ are their corresponding p-values. Now, the p-values are ordered from smaller to larger ($P_{(1)}, P_{(2)}, ..., P_{(m)}$). Then, let $k$ be the largest $i$ for which 
+$$P_{(i)} \leq \frac{i}{m}q^*$$
+
+then, reject all $H_{(i)}$, $i=1,2,...,k$.
+
+The simulation study showed that the power of all methods decreases as the number of hypotheses increases. However, the power of this method is larger than the other studied methods. 
+
+
+### Storey & Tibshirani (2003)
+
+- Storey JD., and Tibshirani R. "Statistical Significance for Genomewide Studies."" Proceedings of the National Academy of Sciences of the United States of America 100, no. 16 (August 5, 2003): 9440–45. https://doi.org/10.1073/pnas.1530509100.
+
+Storey and Tibshirani (2003) proposed an approach to measuring statistical significance controlling the false discovery rate (FDR). The q-value is a measure of the significance of each hypothesis regarding the FDR. Thus, it represents the expected proportion of false positives obtained when calling that hypothesis significant.    
+
+First, the proportion of hypothesis that are truly null ($\pi_0$) is estimated. Then, the FDR is estimated too. Finally, the q-value for each hypothesis is calculated as:
+
+$$\hat{q}(p_i)=min_{t \geq p_i} \frac{\hat{\pi}_0 mt}{ \# \{ p_i \leq t \}}$$ 
+This methodology is less conservative than other methodologies that control the FDR. q-values can be used to identify hypothesis which should be investigated further. 
+
+
