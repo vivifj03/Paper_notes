@@ -121,7 +121,7 @@ The simulation study showed that the power of all methods decreases as the numbe
 
 ### Storey & Tibshirani (2003)
 
-- Storey JD., and Tibshirani R. "Statistical Significance for Genomewide Studies."" Proceedings of the National Academy of Sciences of the United States of America 100, no. 16 (August 5, 2003): 9440–45. https://doi.org/10.1073/pnas.1530509100.
+- Storey JD., and Tibshirani R. "Statistical Significance for Genomewide Studies."" Proceedings of the National Academy of Sciences of the United States of America 100, no. 16 (August 5, 2003): 9440-45. https://doi.org/10.1073/pnas.1530509100.
 
 Storey and Tibshirani (2003) proposed an approach to measuring statistical significance controlling the false discovery rate (FDR). The q-value is a measure of the significance of each hypothesis regarding the FDR. Thus, it represents the expected proportion of false positives obtained when calling that hypothesis significant.    
 
@@ -130,4 +130,27 @@ First, the proportion of hypothesis that are truly null ($\pi_0$) is estimated. 
 $$\hat{q}(p_i)=min_{t \geq p_i} \frac{\hat{\pi}_0 mt}{ \# \{ p_i \leq t \}}$$ 
 This methodology is less conservative than other methodologies that control the FDR. q-values can be used to identify hypothesis which should be investigated further. 
 
+
+### Storey & Tibshirani (2003)
+
+- Ackermann M., Strimmer K. "A General Modular Framework for Gene Set Enrichment Analysis". BMC Bioinformatics 10, no. 1 (2009): 47. doi:10.1186/1471-2105-10-47. 
+
+Methods to assess whether a set of genes is enriched are discussed. Figure 1 shows a general process. First, the identification of differentiated express genes (at gene level) is made.  Second, work with some transformation of the differential expression can be more useful. Third, define the hypothesis to study. The options are the competitive null hypothesis (Q1), self-contained null hypothesis (Q2), and nested null hypothesis (Q3).  Fourth, choose the statistics to assess the hypothesis (gene set statistic). Fifth, choose the statistic approach to calculate the p-value. Q1 implies gene sampling and Q2 implies sample label permutation. 
+
+The simulation study showed that the election of the statistic in the first step does not seem to change the results very much. In the third step, median and the Wilcoxon approaches seem to perform better, especially if the hypothesis is Q1. The use of global test does not seem to improve the results. The conclusion section gives details of the best option to choose in each step considering different issues.
+
+![width='0.05%'](ackerman_strimmer2009.png)
+
+
+### Hung et.al., 2012
+
+- Hung JH, Yang TH, Hu Z, Weng Z, DeLisi C. "Gene Set Enrichment Analysis: Performance Evaluation and Usage Guidelines". Briefings in Bioinformatics 13, no. 3 (May 2012): 281-91. doi:10.1093/bib/bbr049. 
+
+Key components of performing gene set enrichment analysis.
+
+- Data preprocessing: Normalization (RMA and MAS 5.0) and imputation of missing data (K nearest neighbors, singular value decomposition, or least square regression models).
+- Single gene statistics:  median and the Wilcoxon.
+- Gene set-level statistics: Q1 or Q2, but Q2 keeps the relationship between genes. Use controlled mutual coverage (CMC). Wilcoxon rank sum test and WKS had the highest CMC.
+- Estimating significance: get p-value according to hypothesis and statistic. Better to use simulated backgrounds than analytical backgrounds.
+- Correction for multiple testing: do FDR.
 
